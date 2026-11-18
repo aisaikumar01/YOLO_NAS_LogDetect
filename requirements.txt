@@ -1,0 +1,48 @@
+# Working dependency set for super-gradients 3.7.1 on Python 3.13.
+# The official pins (onnxruntime==1.15.0, torchmetrics==0.8, numpy<=1.23)
+# have no Python 3.13 wheels, so install super-gradients without deps and
+# add these instead:
+#
+#   pip install super-gradients==3.7.1 --no-deps
+#   pip install -r requirements.txt
+
+# core
+torch
+torchvision
+numpy
+opencv-python
+pillow
+
+# super-gradients runtime
+omegaconf
+hydra-core
+json-tricks
+treelib
+rapidfuzz
+stringcase
+Deprecated
+jsonschema
+psutil
+matplotlib
+scipy
+tqdm
+colorama
+setuptools<81        # pkg_resources, removed in setuptools 81+
+boto3
+einops
+imagesize
+pandas
+seaborn
+pydantic
+pydantic-settings
+
+# modern replacements for the pinned old versions
+torchmetrics
+onnx
+onnxsim
+onnxruntime
+onnx-graphsurgeon
+
+# super-gradients companion (installed --no-deps because it pulls reportlab,
+# which needs a C compiler to build)
+data-gradients
